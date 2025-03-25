@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNCF Sandwich Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .menu {
+            position: relative;
+            display: inline-block;
+        }
+
+        .menu-button {
+            background-color: #d11c5b; /* SNCF red */
+            color: white;
+            padding: 15px 25px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .menu-button:hover {
+            background-color: #a31446;
+        }
+
+        .menu-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .menu:hover .menu-content {
+            display: block;
+        }
+
+        .menu-content a {
+            display: block;
+            padding: 12px;
+            text-decoration: none;
+            color: black;
+            transition: background 0.3s;
+        }
+
+        .menu-content a:hover {
+            background-color: #ddd;
+        }
+
+        .sandwich {
+            background: linear-gradient(to bottom, 
+                #f4e1c6 0%, #f4e1c6 20%, /* Top Bread */
+                #f3c178 20%, #f3c178 40%, /* Cheese */
+                #d9534f 40%, #d9534f 60%, /* Ham */
+                #3b6e22 60%, #3b6e22 80%, /* Salad */
+                #f4e1c6 80%, #f4e1c6 100% /* Bottom Bread */
+            );
+            height: 40px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu">
+        <button class="menu-button">🍽 SNCF Sandwich Menu</button>
+        <div class="menu-content">
+            <a href="#">🥪 Classic Ham & Cheese</a>
+            <a href="#">🥖 Baguette Special</a>
+            <a href="#">🧀 Extra Cheese Option</a>
+            <a href="#">🥬 Vegetarian Delight</a>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNCF Sandwich Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .dropdown-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        select {
+            background-color: #d11c5b; /* SNCF red */
+            color: white;
+            padding: 12px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            appearance: none;
+            width: 250px;
+            text-align: center;
+        }
+
+        select:hover {
+            background-color: #a31446;
+        }
+
+        select:focus {
+            outline: none;
+        }
+
+        /* Adding a custom dropdown arrow */
+        .dropdown-container::after {
+            content: "▼";
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            color: white;
+            pointer-events: none;
+        }
+
+        /* Optional: Style the options */
+        select option {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dropdown-container">
+        <select>
+            <option selected disabled>🍽 Choose Your SNCF Sandwich</option>
+            <option>🥪 Classic Ham & Cheese</option>
+            <option>🥖 Baguette Special</option>
+            <option>🧀 Extra Cheese Option</option>
+            <option>🥬 Vegetarian Delight</option>
+        </select>
+    </div>
+
+</body>
+</html>
+
