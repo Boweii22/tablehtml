@@ -175,3 +175,89 @@
 </body>
 </html>
 
+
+
+
+
+Sure! Below is a JavaScript snippet that does what you described:
+
+When an element is clicked, its width and height increase by 10px.
+
+If it reaches a maximum size (e.g., 200px), it "pops" (removes itself).
+
+When the mouse leaves, it shrinks by 5px (without going below the original size).
+
+
+JavaScript Code:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resizable Element</title>
+    <style>
+        #box {
+            width: 50px;
+            height: 50px;
+            background-color: dodgerblue;
+            position: absolute;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box">Click Me</div>
+
+<script>
+    const box = document.getElementById("box");
+    let size = 50; // Initial size
+    const maxSize = 200; // Maximum size before it pops
+    const minSize = 50; // Minimum size when shrinking
+
+    box.addEventListener("click", () => {
+        if (size < maxSize) {
+            size += 10;
+            box.style.width = size + "px";
+            box.style.height = size + "px";
+            box.style.lineHeight = size + "px";
+        }
+        if (size >= maxSize) {
+            box.style.transition = "transform 0.2s, opacity 0.2s";
+            box.style.transform = "scale(1.5)";
+            box.style.opacity = "0";
+            setTimeout(() => box.remove(), 200);
+        }
+    });
+
+    box.addEventListener("mouseleave", () => {
+        if (size > minSize) {
+            size -= 5;
+            box.style.width = size + "px";
+            box.style.height = size + "px";
+            box.style.lineHeight = size + "px";
+        }
+    });
+</script>
+
+</body>
+</html>
+
+How It Works:
+
+Clicking the box increases its size.
+
+When it reaches 200px, it "pops" (scales up and fades out before disappearing).
+
+On mouseleave, it shrinks but doesn't go below its original size (50px).
+
+
+Let me know if you need modifications!
+
+
